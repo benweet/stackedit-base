@@ -20,7 +20,7 @@ RUN curl -SLO "http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.g
   && (printf "O\nD\nS\nR\nI\n" | ./install-tl) \
   && cd .. \
   && rm -rf install-tl* /usr/local/texlive/2015/texmf-dist/doc
-ENV PATH /usr/local/texlive/2015/bin/x86_64-linux:$PATH
+ENV PATH /usr/local/texlive/2017/bin/x86_64-linux:$PATH
 
 # install fonts
 RUN mkdir -p ~/.fonts \

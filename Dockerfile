@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:8
 
 # Update existing packages and install required ones
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
@@ -19,8 +19,8 @@ RUN curl -SLO "http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.g
   && cd install-tl-* \
   && (printf "O\nD\nS\nR\nI\n" | ./install-tl) \
   && cd .. \
-  && rm -rf install-tl* /usr/local/texlive/2015/texmf-dist/doc
-ENV PATH /usr/local/texlive/2017/bin/x86_64-linux:$PATH
+  && rm -rf install-tl* /usr/local/texlive/2018/texmf-dist/doc
+ENV PATH /usr/local/texlive/2018/bin/x86_64-linux:$PATH
 
 # install fonts
 RUN mkdir -p ~/.fonts \

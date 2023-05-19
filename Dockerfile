@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:14
 
 # Update existing packages and install required ones
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
@@ -45,6 +45,5 @@ RUN curl -SLO "https://github.com/jgm/pandoc/releases/download/$PANDOC_VERSION/p
   && rm pandoc-$PANDOC_VERSION-1-amd64.deb
 
 ENV NPM_CONFIG_LOGLEVEL warn
-RUN npm install -g yarn
 
 
